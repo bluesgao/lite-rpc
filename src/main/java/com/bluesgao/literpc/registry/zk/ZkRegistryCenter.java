@@ -108,10 +108,10 @@ public class ZkRegistryCenter implements RegistryCenter {
     public void register(ProviderConfig providerConfig) {
         //服务提供者注册
         try {
+            serverLock.lock();
+
             String providers = ZkNodeConvert.providersPath(providerConfig);
             String providerNode = ZkNodeConvert.providerNodePath(providerConfig);
-
-            serverLock.lock();
 
             // 先删除节点再创建节点，防止旧节点未正常注销
             //存在service/providers/ip:port节点时，删除该provider节点
