@@ -4,6 +4,8 @@ import org.apache.curator.RetryPolicy;
 import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.CuratorFrameworkFactory;
 import org.apache.curator.framework.api.transaction.CuratorTransaction;
+import org.apache.curator.framework.recipes.cache.NodeCache;
+import org.apache.curator.framework.recipes.cache.NodeCacheListener;
 import org.apache.curator.retry.ExponentialBackoffRetry;
 import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.data.Stat;
@@ -148,19 +150,19 @@ public class ZkClient {
      * @param nodeCacheListener 监听事件
      * @return 注册结果
      */
-//    public boolean registerWatcherNodeChanged(String path, NodeCacheListener nodeCacheListener) {
-//        NodeCache nodeCache = new NodeCache(client, path, false);
-//        try {
-//            nodeCache.getListenable().addListener(nodeCacheListener);
-//
-//            nodeCache.start(true);
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//            return false;
-//        }
-//
-//        return true;
-//    }
+    public boolean registerWatcherNodeChanged(String path, NodeCacheListener nodeCacheListener) {
+        NodeCache nodeCache = new NodeCache(client, path, false);
+        try {
+            nodeCache.getListenable().addListener(nodeCacheListener);
+
+            nodeCache.start(true);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+
+        return true;
+    }
 
 
     /**

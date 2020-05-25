@@ -10,7 +10,7 @@ public class ZkRegistryCenterTest {
     @Before
     public void setup(){
         RegistryConfig registryConfig = new RegistryConfig();
-        registryConfig.setAddress("47.97.205.190:2181");
+        registryConfig.setAddress("127.0.0.1:2181");
         registryConfig.setTimeout(3000);
         registryConfig.setConnectTimeout(3000);
         zkRegistryCenter = new ZkRegistryCenter(registryConfig);
