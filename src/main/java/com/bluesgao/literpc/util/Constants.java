@@ -5,11 +5,11 @@ package com.bluesgao.literpc.util;
  */
 public class Constants {
 
-    public static final String ROOT = "literpc";
-    public static final String PROVIDERS_CATEGORY = "providers";
-    public static final String CONSUMERS_CATEGORY = "consumers";
-    public static final String ROUTERS_CATEGORY = "routers";
-    public static final String CONFIGURATORS_CATEGORY = "configurators";
+    public static final String ROOT = "/literpc";
+    public static final String PROVIDERS = "providers";
+    public static final String CONSUMERS = "consumers";
+    public static final String ROUTERS = "routers";
+    public static final String CONFIGURATORS = "configurators";
     public static final String PATH_SEPARATOR = "\\";
 
 
